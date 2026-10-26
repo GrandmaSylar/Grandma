@@ -109,4 +109,9 @@ h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
 .btn.primary { background: var(--steel-dark); border-color: var(--steel-dark); color: #fff; }
 .btn.primary:hover { background: var(--steel); }
 
+.qr { display: grid; justify-items: center; gap: 10px; margin-top: 26px; padding-top: 22px; border-top: 1px dashed var(--glass-border); }
+.qr img { width: 160px; height: auto; border-radius: 14px; box-shadow: 0 0 28px var(--glow); }
+.qr figcaption { font: 12px "Geist Mono", ui-monospace, monospace; color: var(--muted); text-align: center; }
+.qr a { color: var(--steel); }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
