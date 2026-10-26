@@ -1,40 +1,60 @@
 <!doctype html>
-<html lang="en" data-theme="night">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bernard Obeng Anim</title>
-  <meta name="description" content="Bernard Obeng Anim — Software Engineer, Full-Stack Developer, Fintech & Systems Builder.">
-  <meta property="og:title" content="Bernard Obeng Anim">
-  <meta property="og:description" content="Software Engineer · Full-Stack Developer · Fintech & Systems Builder">
+  <meta name="description" content="Bernard Obeng Anim — Software Developer. I design and build custom software for businesses and financial institutions.">
+  <meta property="og:title" content="Bernard Obeng Anim — Software Developer">
+  <meta property="og:description" content="I build the software that businesses run on: websites, apps and banking systems.">
   <meta property="og:type" content="profile">
-  <meta name="theme-color" content="#060e1d">
+  <meta name="theme-color" content="#1B2C4F">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
   <link rel="stylesheet" href="style.css">
-  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
 </head>
 <body>
-  <main class="card glass">
-    <button class="theme-toggle" id="theme" aria-label="Toggle day/night theme">◐</button>
+  <main class="card">
+    <button class="theme-toggle" id="theme" aria-label="Switch between light and dark">◐</button>
 
     <div class="avatar" aria-hidden="true">BA</div>
-    <p class="prompt">~/bernard $ whoami</p>
     <h1>Bernard Obeng Anim</h1>
-    <p class="role">Software Engineer · Full-Stack Developer</p>
-    <p class="bio">Fintech &amp; systems builder. I ship production-ready systems across web, desktop and mobile — React, Electron, Node.js, Docker, Linux.</p>
+    <p class="role">Software Developer</p>
+    <p class="company">PhiNova &amp; Auratech Solutions · Ghana</p>
 
-    <ul class="meta">
-      <li><span>role</span> PhiNova &amp; Auratech Solutions</li>
-      <li><span>base</span> Ghana</li>
-      <li><span>stack</span> TypeScript · React · Node · SQL</li>
-    </ul>
+    <p class="bio">I design and build the software that businesses run on. I turn everyday needs, like managing customers, payments or records, into reliable tools people can use with ease. Currently helping credit unions across Ghana keep their banking systems running smoothly.</p>
+
+    <section class="services" aria-labelledby="what">
+      <h2 id="what">What I can help with</h2>
+      <ul>
+        <li><strong>Websites &amp; web apps</strong><span>Company sites and online platforms</span></li>
+        <li><strong>Mobile &amp; desktop apps</strong><span>Tools for your team or customers</span></li>
+        <li><strong>Banking &amp; business systems</strong><span>Setup, upkeep and staff training</span></li>
+        <li><strong>Data &amp; records</strong><span>Safe migration, backups and reporting</span></li>
+      </ul>
+    </section>
 
     <nav class="links" aria-label="Contact links">
-      <a href="mailto:bernardobenganim@gmail.com"><b>@</b> bernardobenganim@gmail.com</a>
-      <a href="https://github.com/GrandmaSylar" rel="noopener"><b>{}</b> github.com/GrandmaSylar</a>
-      <a href="https://phinova.dev" rel="noopener"><b>↗</b> phinova.dev</a>
+      <a href="mailto:bernardobenganim@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5zM4.5 7l7.5 5.5L19.5 7"/></svg>
+        <span>Email<small>bernardobenganim@gmail.com</small></span>
+      </a>
+      <a href="https://phinova.dev" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.300 6.300-3.800 9c-2.500-2.700-3.800-5.700-3.800-9s1.300-6.300 3.800-9z"/></svg>
+        <span>Website<small>phinova.dev</small></span>
+      </a>
+      <a href="https://github.com/GrandmaSylar" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg>
+        <span>Portfolio of work<small>github.com/GrandmaSylar</small></span>
+      </a>
     </nav>
 
     <div class="actions">

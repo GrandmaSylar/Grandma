@@ -1,6 +1,6 @@
 const contact = {
   name: "Bernard Obeng Anim",
-  title: "Software Engineer",
+  title: "Software Developer",
   org: "PhiNova",
   email: "bernardobenganim@gmail.com",
   urls: ["https://phinova.dev", "https://github.com/GrandmaSylar"],
