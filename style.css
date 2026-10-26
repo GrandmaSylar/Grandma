@@ -109,10 +109,8 @@ h2 {
   -webkit-mask-image: linear-gradient(120deg, transparent 25%, #000 100%);
 }
 .avatar {
-  width: 96px; height: 96px; margin: -48px auto 14px; border-radius: 50%;
-  display: grid; place-items: center; position: relative;
-  font-size: 32px; font-weight: 600; letter-spacing: 0.02em; color: #fff;
-  background: linear-gradient(135deg, #3C5F8A, #6E97C0);
+  display: block; width: 112px; height: 112px; margin: -56px auto 14px; border-radius: 50%;
+  position: relative; object-fit: cover; background: var(--navy);
   box-shadow: 0 0 0 5px var(--card), 0 0 0 6px var(--line), 0 10px 24px rgba(60, 95, 138, .35);
 }
 h1 { font-size: clamp(26px, 6vw, 30px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; }
