@@ -1,0 +1,112 @@
+/* Palette taken from the PhiNova site (navy / steel / canvas / ink) */
+:root {
+  --navy: #1B2C4F;
+  --steel: #6E97C0;
+  --steel-dark: #4D7AA8;
+  --canvas: #F2F1EE;
+  --ink: #15203A;
+
+  --background: #F2F1EE;
+  --foreground: #15203A;
+  --muted: rgba(21, 32, 58, 0.65);
+  --glass-bg: rgba(242, 241, 238, 0.70);
+  --glass-border: rgba(27, 44, 79, 0.15);
+  --glass-highlight: rgba(255, 255, 255, 0.28);
+  --glass-shadow: rgba(27, 44, 79, 0.10);
+  --glow: rgba(110, 151, 192, 0.18);
+}
+[data-theme="night"] {
+  --background: #060e1d;
+  --foreground: #F2F1EE;
+  --muted: rgba(242, 241, 238, 0.62);
+  --glass-bg: rgba(6, 14, 35, 0.80);
+  --glass-border: rgba(110, 151, 192, 0.28);
+  --glass-highlight: rgba(255, 255, 255, 0.07);
+  --glass-shadow: rgba(0, 0, 0, 0.55);
+  --glow: rgba(110, 151, 192, 0.18);
+}
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  font-family: "Geist", system-ui, sans-serif;
+  color: var(--foreground);
+  background:
+    radial-gradient(60rem 30rem at 50% -10%, var(--glow), transparent 70%),
+    linear-gradient(var(--glow) 1px, transparent 1px) 0 0 / 100% 40px,
+    linear-gradient(90deg, var(--glow) 1px, transparent 1px) 0 0 / 40px 100%,
+    var(--background);
+}
+
+.card {
+  position: relative;
+  width: min(100%, 440px);
+  padding: 36px 28px 28px;
+  border-radius: 1.25rem;
+}
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 8px 32px var(--glass-shadow);
+}
+
+.theme-toggle {
+  position: absolute; top: 14px; right: 14px;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: transparent; color: var(--steel); font-size: 18px; cursor: pointer;
+}
+
+.avatar {
+  width: 84px; height: 84px; border-radius: 50%;
+  display: grid; place-items: center;
+  font: 500 28px "Geist Mono", ui-monospace, monospace;
+  color: var(--canvas);
+  background: linear-gradient(135deg, var(--navy), var(--steel-dark));
+  box-shadow: 0 0 0 2px var(--steel), 0 0 28px var(--glow);
+  margin-bottom: 18px;
+}
+.prompt, .meta, .btn {
+  font-family: "Geist Mono", ui-monospace, monospace;
+}
+.prompt { font-size: 12px; color: var(--steel); margin-bottom: 6px; }
+h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
+.role { color: var(--steel); font-weight: 500; margin-top: 4px; }
+.bio { color: var(--muted); line-height: 1.55; margin-top: 14px; font-size: 15px; }
+
+.meta { list-style: none; padding: 0; margin-top: 18px; font-size: 12.5px; color: var(--muted); display: grid; gap: 6px; }
+.meta span { color: var(--steel); margin-right: 8px; }
+.meta span::after { content: ":"; }
+
+.links { display: grid; gap: 10px; margin-top: 22px; }
+.links a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: 0.625rem;
+  color: var(--foreground); text-decoration: none; font-size: 14px;
+  border: 1px solid var(--glass-border);
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+  overflow-wrap: anywhere;
+}
+.links a b { color: var(--steel); font-family: "Geist Mono", monospace; width: 20px; flex: none; }
+.links a:hover, .links a:focus-visible {
+  border-color: var(--steel); transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--glow); outline: none;
+}
+
+.actions { display: flex; gap: 10px; margin-top: 22px; }
+.btn {
+  flex: 1; padding: 12px; border-radius: 9999px; cursor: pointer;
+  font-size: 13px; color: var(--foreground);
+  background: transparent; border: 1px solid var(--glass-border);
+  transition: background .3s, border-color .3s;
+}
+.btn:hover, .btn:focus-visible { border-color: var(--steel); outline: none; }
+.btn.primary { background: var(--steel-dark); border-color: var(--steel-dark); color: #fff; }
+.btn.primary:hover { background: var(--steel); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
