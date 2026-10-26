@@ -3,7 +3,7 @@ const contact = {
   title: "Software Developer",
   org: "PhiNova",
   email: "bernardobenganim@gmail.com",
-  urls: ["https://phinova.dev", "https://github.com/GrandmaSylar"],
+  urls: ["https://phinova.dev"],
 };
 
 function vcard(c) {

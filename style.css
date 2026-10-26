@@ -1,23 +1,30 @@
 /* Palette taken from the PhiNova site (navy / steel / canvas / ink) */
+/* Soft palette: light airy surfaces, gentle blue accents */
 :root, [data-theme="day"] {
-  --navy: #1B2C4F;
+  --navy: #3C5F8A;
   --steel: #4D7AA8;
-  --background: #E9E8E4;
-  --card: #F7F6F3;
-  --foreground: #15203A;
-  --muted: rgba(21, 32, 58, 0.68);
-  --line: rgba(27, 44, 79, 0.14);
-  --shadow: 0 10px 40px rgba(27, 44, 79, 0.12);
-  --accent-text: #4D7AA8;
+  --background: #EEF2F6;
+  --card: #FFFFFF;
+  --foreground: #23324F;
+  --muted: rgba(35, 50, 79, 0.70);
+  --line: rgba(60, 95, 138, 0.16);
+  --shadow: 0 8px 30px rgba(60, 95, 138, 0.10);
+  --accent-text: #46709C;
+  --button: #46709C;
+  --button-hover: #3C5F8A;
 }
 [data-theme="night"] {
-  --background: #060e1d;
-  --card: #0b1830;
-  --foreground: #F2F1EE;
-  --muted: rgba(242, 241, 238, 0.68);
-  --line: rgba(110, 151, 192, 0.25);
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  --accent-text: #6E97C0;
+  --navy: #3C5F8A;
+  --steel: #6E97C0;
+  --background: #0E1A2E;
+  --card: #15233B;
+  --foreground: #EEF1F5;
+  --muted: rgba(238, 241, 245, 0.72);
+  --line: rgba(110, 151, 192, 0.24);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --accent-text: #8DB0D4;
+  --button: #4D7AA8;
+  --button-hover: #5C8BBB;
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -29,7 +36,7 @@ body {
   font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--foreground);
   background:
-    radial-gradient(50rem 24rem at 50% -8%, rgba(110, 151, 192, 0.16), transparent 70%),
+    radial-gradient(50rem 24rem at 50% -8%, rgba(110, 151, 192, 0.12), transparent 70%),
     var(--background);
 }
 
@@ -55,15 +62,16 @@ body {
   display: grid; place-items: center;
   font: 600 26px "Geist", system-ui, sans-serif; letter-spacing: 0.02em;
   color: #F2F1EE;
-  background: linear-gradient(135deg, var(--navy), var(--steel));
+  background: linear-gradient(135deg, #5B86B3, #8DB0D4);
   margin-bottom: 18px;
 }
 h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
-.role { color: var(--accent-text); font-weight: 500; font-size: 17px; margin-top: 4px; }
+.role { color: var(--accent-text); font-weight: 500; font-size: 17px; line-height: 1.35; margin-top: 6px; }
 .company { color: var(--muted); font-size: 14px; margin-top: 2px; }
 .bio { color: var(--muted); line-height: 1.6; margin-top: 18px; font-size: 15px; }
 
 .services { margin-top: 24px; }
+.services.why { margin-top: 26px; }
 .services h2 {
   font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--accent-text); margin-bottom: 10px;
@@ -100,10 +108,8 @@ h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
   transition: background .25s, border-color .25s;
 }
 .btn:hover, .btn:focus-visible { border-color: var(--steel); outline: none; }
-.btn.primary { background: var(--navy); border-color: var(--navy); color: #F2F1EE; }
-.btn.primary:hover { background: var(--steel); border-color: var(--steel); }
-[data-theme="night"] .btn.primary { background: var(--steel); border-color: var(--steel); }
-[data-theme="night"] .btn.primary:hover { background: #6E97C0; }
+.btn.primary { background: var(--button); border-color: var(--button); color: #fff; }
+.btn.primary:hover { background: var(--button-hover); border-color: var(--button-hover); }
 
 .qr { display: grid; justify-items: center; gap: 10px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
 .qr img { width: 160px; height: auto; border-radius: 14px; border: 1px solid var(--line); }
