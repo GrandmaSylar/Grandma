@@ -3,6 +3,7 @@ const contact = {
   title: "Software Developer",
   org: "PhiNova",
   email: "bernardobenganim@gmail.com",
+  phones: ["+233248594482", "+233204906780"],
   urls: ["https://phinova.dev"],
 };
 
@@ -14,6 +15,7 @@ function vcard(c) {
     `FN:${c.name}`,
     `ORG:${c.org}`,
     `TITLE:${c.title}`,
+    ...c.phones.map((p) => `TEL;TYPE=CELL:${p}`),
     `EMAIL;TYPE=INTERNET:${c.email}`,
     ...c.urls.map((u) => `URL:${u}`),
     "END:VCARD",
